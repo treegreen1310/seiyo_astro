@@ -1,0 +1,1038 @@
+:root {
+  --bg-primary: #FAF7F2;
+  --bg-card: #FFFFFF;
+  --bg-subtle: #F5EFE8;
+  --bg-warm: #FDFBF8;
+  --border-light: #E8DFD5;
+  --border-accent: #D8C8B8;
+  --text-main: #4A3F3A;
+  --text-sub: #8C7A70;
+  --text-muted: #A8988E;
+  --accent-rose: #C27D7A;
+  --accent-rose-dark: #A86461;
+  --accent-rose-light: #F7ECEB;
+  --accent-gold: #C5A059;
+  --accent-gold-light: #FBF6EC;
+  --accent-sage: #7E9C88;
+  --accent-mauve: #9B7E9E;
+  --font-serif: 'Shippori Mincho', 'Cormorant Garamond', Georgia, serif;
+  --font-sans: 'Zen Kaku Gothic New', -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+}
+
+*, *::before, *::after {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  padding: 0;
+  font-family: var(--font-sans);
+  background-color: var(--bg-primary);
+  background-image: 
+    radial-gradient(circle at 15% 10%, rgba(194, 125, 122, 0.05) 0%, transparent 45%),
+    radial-gradient(circle at 85% 90%, rgba(197, 160, 89, 0.06) 0%, transparent 50%);
+  color: var(--text-main);
+  -webkit-font-smoothing: antialiased;
+  line-height: 1.6;
+}
+
+/* アプリ全体の中央揃えコンテナ */
+.app-container {
+  width: 100%;
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 32px 20px 72px 20px;
+}
+
+/* テーブル・カード共通スタイル定義 */
+.astro-table-container {
+  width: 100%;
+  background-color: var(--bg-card);
+  border-radius: 16px;
+  border: 1px solid var(--border-light);
+  overflow: hidden;
+  box-shadow: 0 8px 28px rgba(74, 63, 58, 0.04), 0 2px 6px rgba(74, 63, 58, 0.02);
+}
+
+.astro-table-title {
+  background: linear-gradient(135deg, #F5EFE8 0%, #EFE6DC 100%);
+  padding: 13px 20px;
+  font-family: var(--font-serif);
+  font-weight: 600;
+  font-size: 15.5px;
+  letter-spacing: 0.04em;
+  color: var(--text-main);
+  text-align: center;
+  border-bottom: 1px solid var(--border-light);
+  position: relative;
+}
+
+.astro-table {
+  width: 100%;
+  border-collapse: collapse;
+  font-size: 13.5px;
+}
+
+.astro-table th {
+  background-color: #9E8B82;
+  color: #FFFFFF;
+  font-weight: 500;
+  letter-spacing: 0.03em;
+  padding: 10px 14px;
+  text-align: left;
+  border: 1px solid #8E7B72;
+}
+
+.astro-table td {
+  padding: 10px 14px;
+  border: 1px solid #EFE8E0;
+  background-color: var(--bg-warm);
+  color: var(--text-main);
+  transition: background-color 0.15s ease;
+}
+
+.astro-table tr:nth-child(even) td {
+  background-color: #FAF6F1;
+}
+
+.astro-table tr:hover td {
+  background-color: var(--accent-gold-light);
+}
+
+/* 秘密の鍵解除時の特別テーブルカラー（ミスティック・ラベンダーモーヴ系） */
+.astro-table-container.secret-table-container {
+  border: 1.5px solid #D4C0DC;
+  box-shadow: 0 8px 28px rgba(123, 94, 128, 0.08), 0 2px 6px rgba(123, 94, 128, 0.04);
+}
+
+.secret-table-container .astro-table-title {
+  background: linear-gradient(135deg, #F3ECF6 0%, #E7D9EE 100%);
+  color: #4A3552;
+  border-bottom: 1px solid #D4C0DC;
+}
+
+.secret-table-container .astro-table th {
+  background-color: #886D90;
+  color: #FFFFFF;
+  border: 1px solid #785E80;
+}
+
+.secret-table-container .astro-table td {
+  border: 1px solid #EDE3F2;
+  background-color: #FCF9FD;
+  color: #433447;
+}
+
+.secret-table-container .astro-table tr:nth-child(even) td {
+  background-color: #F7F1FA;
+}
+
+.secret-table-container .astro-table tr:hover td {
+  background-color: #EFE5F5;
+}
+
+/* フォームの共通入力スタイル */
+.input-field {
+  padding: 7px 12px;
+  border: 1px solid var(--border-accent);
+  border-radius: 8px;
+  font-size: 14px;
+  font-family: var(--font-sans);
+  color: var(--text-main);
+  background-color: #FFFFFF;
+  outline: none;
+  transition: border-color 0.2s, box-shadow 0.2s;
+}
+
+.input-field:focus {
+  border-color: var(--accent-rose);
+  box-shadow: 0 0 0 3px rgba(194, 125, 122, 0.15);
+}
+
+.input-field:disabled {
+  background-color: #F4EFEA;
+  color: var(--text-muted);
+  cursor: not-allowed;
+  border-color: var(--border-light);
+}
+
+/* 日時入力用の共通コンボボックススタイル */
+.combo-box {
+  display: flex;
+  align-items: center;
+  border: 1px solid var(--border-accent);
+  border-radius: 8px;
+  background-color: #FFFFFF;
+  overflow: hidden;
+  height: 36px;
+  transition: border-color 0.2s, box-shadow 0.2s;
+}
+
+.combo-box:focus-within {
+  border-color: var(--accent-rose);
+  box-shadow: 0 0 0 3px rgba(194, 125, 122, 0.15);
+}
+
+.combo-input {
+  border: none;
+  outline: none;
+  font-size: 14px;
+  font-family: var(--font-sans);
+  padding: 4px 6px;
+  text-align: center;
+  background: transparent;
+  color: var(--text-main);
+  box-sizing: border-box;
+}
+
+.combo-select {
+  border: none;
+  border-left: 1px solid var(--border-light);
+  outline: none;
+  background-color: var(--bg-subtle);
+  cursor: pointer;
+  height: 100%;
+  padding: 0 6px;
+  font-size: 12px;
+  color: var(--text-sub);
+  box-sizing: border-box;
+}
+
+/* プライマリボタン（大人フェミニンなダスティローズ） */
+.btn-primary {
+  background: linear-gradient(135deg, #C98683 0%, #B36B68 100%);
+  color: #FFFFFF;
+  font-family: var(--font-sans);
+  font-weight: 500;
+  letter-spacing: 0.05em;
+  padding: 11px 28px;
+  border-radius: 999px;
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  cursor: pointer;
+  box-shadow: 0 4px 14px rgba(179, 107, 104, 0.28);
+  transition: all 0.2s ease;
+  font-size: 14.5px;
+}
+
+.btn-primary:hover:not(:disabled) {
+  background: linear-gradient(135deg, #BF7A77 0%, #A35D5A 100%);
+  box-shadow: 0 6px 18px rgba(179, 107, 104, 0.36);
+  transform: translateY(-1px);
+}
+
+.btn-primary:disabled {
+  opacity: 0.6;
+  cursor: not-allowed;
+}
+
+/* PC表示時はスマホ用改行を無効化 */
+.mobile-only-br {
+  display: none;
+}
+
+.desktop-only-inline {
+  display: inline;
+}
+
+/* 基本の3つ（太陽・月・ASC）カード */
+.big-three-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 12px;
+}
+
+.big-three-tile {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 4px;
+  padding: 14px 10px;
+  background-color: var(--bg-warm);
+  border: 1px solid var(--border-light);
+  border-radius: 14px;
+  cursor: pointer;
+  font-family: var(--font-sans);
+  transition: all 0.2s ease;
+}
+
+.big-three-tile:hover {
+  border-color: var(--accent-gold);
+  background-color: var(--accent-gold-light);
+  transform: translateY(-1px);
+}
+
+.big-three-more {
+  margin-top: 4px;
+  font-size: 11.5px;
+  color: var(--accent-rose-dark);
+}
+
+/* 天体一覧で解説が見られる行 */
+.learnable-row {
+  cursor: pointer;
+}
+
+.learn-badge {
+  margin-left: 6px;
+  padding: 1px 6px;
+  font-size: 10px;
+  font-weight: 500;
+  color: var(--accent-rose-dark);
+  background-color: var(--accent-rose-light);
+  border: 1px solid #E5CFCB;
+  border-radius: 999px;
+  vertical-align: middle;
+}
+
+/* 学習パネル（PCは中央のダイアログ、スマホは下から出るシート） */
+.learn-overlay {
+  position: fixed;
+  inset: 0;
+  z-index: 1000;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 20px;
+  background-color: rgba(74, 63, 58, 0.35);
+}
+
+.learn-panel {
+  width: 100%;
+  max-width: 620px;
+  max-height: 88vh;
+  display: flex;
+  flex-direction: column;
+  background-color: var(--bg-primary);
+  border: 1px solid var(--border-light);
+  border-radius: 18px;
+  box-shadow: 0 16px 48px rgba(74, 63, 58, 0.18);
+  overflow: hidden;
+}
+
+.learn-panel-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  gap: 12px;
+  padding: 16px 20px 12px;
+  background: linear-gradient(135deg, #F5EFE8 0%, #EFE6DC 100%);
+  border-bottom: 1px solid var(--border-light);
+}
+
+.learn-close {
+  flex-shrink: 0;
+  width: 32px;
+  height: 32px;
+  border: 1px solid var(--border-accent);
+  border-radius: 50%;
+  background-color: #FFFFFF;
+  color: var(--text-sub);
+  font-size: 18px;
+  line-height: 1;
+  cursor: pointer;
+}
+
+.learn-panel-body {
+  padding: 18px 20px 22px;
+  overflow-y: auto;
+}
+
+.learn-section {
+  margin-bottom: 18px;
+  padding-bottom: 16px;
+  border-bottom: 1px dashed var(--border-light);
+}
+
+.learn-lead {
+  margin: 0 0 4px;
+  font-size: 14px;
+  font-weight: 600;
+  color: var(--text-main);
+}
+
+.learn-text {
+  margin: 0 0 8px;
+  font-size: 13.5px;
+  color: var(--text-main);
+}
+
+.learn-list {
+  margin: 4px 0 0;
+  padding-left: 18px;
+  font-size: 13.5px;
+}
+
+.learn-list li {
+  margin-bottom: 3px;
+}
+
+.learn-keywords {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 6px;
+}
+
+.learn-keywords span {
+  padding: 2px 9px;
+  font-size: 12px;
+  color: var(--text-sub);
+  background-color: #FFFFFF;
+  border: 1px solid var(--border-light);
+  border-radius: 999px;
+}
+
+.learn-trivia {
+  margin: 8px 0 0;
+  font-size: 12.5px;
+  color: var(--text-sub);
+}
+
+.learn-hint {
+  margin-top: 10px;
+  padding: 10px 12px;
+  font-size: 13px;
+  background-color: #FFFFFF;
+  border: 1px solid var(--border-light);
+  border-radius: 10px;
+}
+
+.learn-tip {
+  padding: 12px 14px;
+  font-size: 13px;
+  line-height: 1.8;
+  background-color: var(--accent-gold-light);
+  border: 1px solid #E6D5B8;
+  border-radius: 12px;
+}
+
+.learn-link-btn {
+  padding: 7px 14px;
+  font-size: 12.5px;
+  font-family: var(--font-sans);
+  color: var(--accent-rose-dark);
+  background-color: #FFFFFF;
+  border: 1px solid #E5CFCB;
+  border-radius: 999px;
+  cursor: pointer;
+}
+
+.learn-link-btn:hover {
+  background-color: var(--accent-rose-light);
+}
+
+/* アスペクトの解説：組み合わせ別の「ひとことで」 */
+.learn-pair-oneline {
+  margin-bottom: 18px;
+  padding: 14px 16px;
+  background-color: var(--accent-gold-light);
+  border: 1px solid #E6D5B8;
+  border-radius: 12px;
+}
+
+/* 折りたたみ（角度の基本の意味） */
+.learn-details {
+  margin-bottom: 18px;
+  padding: 10px 14px;
+  background-color: #FFFFFF;
+  border: 1px solid var(--border-light);
+  border-radius: 12px;
+}
+
+.learn-details summary {
+  font-size: 13px;
+  font-weight: 600;
+  color: var(--accent-rose-dark);
+  cursor: pointer;
+}
+
+.learn-details[open] summary {
+  margin-bottom: 12px;
+}
+
+/* 用語の説明（点線の下線を押すと吹き出しが出る） */
+.term {
+  cursor: help;
+  text-decoration: underline dotted;
+  text-underline-offset: 3px;
+  text-decoration-thickness: 1px;
+}
+
+.term-popover {
+  position: fixed;
+  z-index: 1100;
+  display: block;
+  padding: 10px 12px;
+  font-family: var(--font-sans);
+  font-size: 12.5px;
+  font-weight: 400;
+  line-height: 1.6;
+  letter-spacing: 0;
+  text-align: left;
+  white-space: normal;
+  color: var(--text-main);
+  background-color: #FFFFFF;
+  border: 1px solid var(--border-accent);
+  border-radius: 10px;
+  box-shadow: 0 8px 24px rgba(74, 63, 58, 0.16);
+  cursor: default;
+}
+
+/* チャート横の天体詳細カード：押すと解説が出る部分 */
+.card-learn-link {
+  padding: 0;
+  font-family: inherit;
+  font-size: inherit;
+  font-weight: 700;
+  color: var(--accent-rose-dark);
+  background: none;
+  border: none;
+  text-align: left;
+  text-decoration: underline dotted;
+  text-underline-offset: 3px;
+  cursor: pointer;
+}
+
+.card-aspect-item {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 6px;
+  cursor: pointer;
+  transition: background-color 0.15s ease;
+}
+
+.card-aspect-item:hover {
+  background-color: var(--accent-gold-light) !important;
+}
+
+.card-aspect-more {
+  flex-shrink: 0;
+  font-size: 10.5px;
+  color: var(--accent-rose-dark);
+}
+
+/* アスペクト詳細リスト：押すと解説が出る行 */
+.aspect-item-learnable {
+  cursor: pointer;
+  border-radius: 4px;
+}
+
+.aspect-item-learnable:hover {
+  background-color: var(--accent-gold-light);
+}
+
+/* 一重円の右上：小惑星の表示切り替えボタン */
+.wheel-asteroid-toggle {
+  position: absolute;
+  top: 4px;
+  right: 4px;
+  z-index: 10;
+  padding: 5px 12px;
+  font-family: var(--font-sans);
+  font-size: 12px;
+  font-weight: 600;
+  color: var(--text-sub);
+  background-color: #FFFFFF;
+  border: 1px solid var(--border-accent);
+  border-radius: 999px;
+  box-shadow: 0 2px 8px rgba(74, 63, 58, 0.08);
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+
+.wheel-asteroid-toggle.is-on {
+  color: #FFFFFF;
+  background-color: #886D90;
+  border-color: #886D90;
+}
+
+/* 円盤の下：選んだアスペクト線の表示（押すと解説） */
+.wheel-aspect-pill {
+  display: inline-flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: center;
+  gap: 4px 8px;
+  padding: 4px 12px;
+  font-family: inherit;
+  font-size: 13px;
+  font-weight: 500;
+  color: #8C6D32;
+  background-color: #FBF6EC;
+  border: 1px solid #E6D5B8;
+  border-radius: 999px;
+  cursor: pointer;
+  transition: all 0.2s ease;
+}
+
+.wheel-aspect-pill:hover:not(:disabled) {
+  border-color: var(--accent-gold);
+  box-shadow: 0 2px 8px rgba(197, 160, 89, 0.2);
+}
+
+.wheel-aspect-pill:disabled {
+  cursor: default;
+}
+
+.wheel-aspect-pill-more {
+  font-size: 11.5px;
+  font-weight: 600;
+  color: var(--accent-rose-dark);
+}
+
+/* アスペクトリスト：行の右端の「解説」ボタン */
+.aspect-learn-btn {
+  flex-shrink: 0;
+  padding: 1px 9px;
+  font-family: var(--font-sans);
+  font-size: 11px;
+  font-weight: 500;
+  color: var(--accent-rose-dark);
+  background-color: #FFFFFF;
+  border: 1px solid #E5CFCB;
+  border-radius: 999px;
+  cursor: pointer;
+}
+
+.aspect-learn-btn:hover {
+  background-color: var(--accent-rose-light);
+}
+
+/* 5ステップ読み解きツアー */
+.tour-intro-lead {
+  margin: 0 0 14px;
+  font-size: 14.5px;
+  color: var(--text-sub);
+}
+
+.tour-intro-row {
+  display: grid;
+  grid-template-columns: 1fr auto 1fr;
+  align-items: end;
+  gap: 16px;
+}
+
+.tour-overview {
+  grid-column: 2;
+  margin: 0;
+  padding-left: 24px;
+  font-size: 15px;
+  line-height: 1.7;
+  text-align: left;
+}
+
+.tour-overview li {
+  margin-bottom: 4px;
+}
+
+.tour-overview li:last-child {
+  margin-bottom: 0;
+}
+
+.tour-start-btn {
+  grid-column: 3;
+  justify-self: end;
+}
+
+.tour-overview li.is-soon {
+  color: var(--text-muted);
+}
+
+.tour-soon {
+  margin-left: 8px;
+  padding: 1px 7px;
+  font-size: 10.5px;
+  color: var(--text-sub);
+  background-color: var(--bg-subtle);
+  border: 1px solid var(--border-light);
+  border-radius: 999px;
+}
+
+.tour-stepper {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 6px;
+  margin-bottom: 14px;
+}
+
+.tour-step-chip {
+  padding: 5px 12px;
+  font-size: 12.5px;
+  font-family: var(--font-sans);
+  color: var(--text-sub);
+  background-color: #FFFFFF;
+  border: 1px solid var(--border-light);
+  border-radius: 999px;
+  cursor: pointer;
+}
+
+.tour-step-chip.is-active {
+  color: #FFFFFF;
+  background-color: var(--accent-rose-dark);
+  border-color: var(--accent-rose-dark);
+  font-weight: 600;
+}
+
+.tour-step-chip:disabled {
+  color: var(--text-muted);
+  background-color: var(--bg-subtle);
+  cursor: not-allowed;
+}
+
+.tour-title {
+  margin: 0 0 10px;
+  font-family: var(--font-serif);
+  font-size: 17px;
+  font-weight: 600;
+  color: var(--text-main);
+}
+
+.tour-block {
+  margin-bottom: 14px;
+  padding: 12px 14px;
+  background-color: #FFFFFF;
+  border: 1px solid var(--border-light);
+  border-radius: 12px;
+}
+
+.tour-block-title {
+  margin-bottom: 8px;
+  font-size: 12.5px;
+  font-weight: 600;
+  color: var(--text-sub);
+}
+
+.tour-bar-row {
+  display: grid;
+  grid-template-columns: 34px 1fr 20px minmax(0, 1.6fr);
+  align-items: center;
+  gap: 8px;
+  margin-bottom: 5px;
+  font-size: 13px;
+}
+
+.tour-bar-label {
+  font-weight: 600;
+}
+
+.tour-bar-track {
+  height: 10px;
+  background-color: var(--bg-subtle);
+  border-radius: 999px;
+  overflow: hidden;
+}
+
+.tour-bar-fill {
+  display: block;
+  height: 100%;
+  border-radius: 999px;
+}
+
+.tour-bar-count {
+  font-weight: 600;
+  text-align: right;
+}
+
+.tour-bar-names {
+  font-size: 12px;
+  color: var(--text-sub);
+}
+
+.tour-hemi {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 4px 12px;
+  font-size: 13px;
+}
+
+.tour-item {
+  margin-bottom: 12px;
+  padding: 12px 14px;
+  background-color: #FFFFFF;
+  border: 1px solid var(--border-light);
+  border-radius: 12px;
+}
+
+.tour-item-head {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 4px 10px;
+  margin-bottom: 6px;
+  font-size: 14px;
+}
+
+.tour-item-caption {
+  padding: 1px 8px;
+  font-size: 11px;
+  color: var(--text-sub);
+  background-color: var(--bg-subtle);
+  border-radius: 999px;
+}
+
+.tour-item-more {
+  margin-left: auto;
+  padding: 4px 11px;
+}
+
+.tour-summary {
+  background-color: var(--accent-gold-light);
+  border-color: #E6D5B8;
+}
+
+.tour-summary .learn-list li {
+  margin-bottom: 8px;
+}
+
+.tour-relation-tag {
+  display: inline-block;
+  white-space: nowrap;
+  margin-left: 8px;
+  padding: 1px 8px;
+  font-size: 11px;
+  color: #8C6D32;
+  background-color: #FFFFFF;
+  border: 1px solid #E6D5B8;
+  border-radius: 999px;
+}
+
+.tour-aspect-row {
+  padding: 8px 0;
+  border-bottom: 1px dashed var(--border-light);
+}
+
+.tour-aspect-row:last-child {
+  border-bottom: none;
+  padding-bottom: 0;
+}
+
+.tour-aspect-head {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 4px 8px;
+  font-size: 14px;
+}
+
+.tour-aspect-orb {
+  margin-left: auto;
+  font-family: monospace;
+  font-size: 12px;
+  color: var(--text-sub);
+  white-space: nowrap;
+}
+
+.tour-strong-tag {
+  padding: 1px 8px;
+  font-size: 11px;
+  font-weight: 600;
+  color: #FFFFFF;
+  background-color: var(--accent-rose);
+  border-radius: 999px;
+  white-space: nowrap;
+}
+
+.tour-aspect-oneline {
+  margin: 6px 0 0;
+  font-size: 14px;
+  font-weight: 600;
+  color: var(--accent-rose-dark);
+}
+
+.tour-aspect-text {
+  margin: 4px 0 0;
+  font-size: 13.5px;
+  line-height: 1.8;
+}
+
+.tour-memo {
+  width: 100%;
+  min-height: 80px;
+  padding: 10px 12px;
+  font-family: var(--font-sans);
+  font-size: 13.5px;
+  line-height: 1.7;
+  color: var(--text-main);
+  border: 1px solid var(--border-accent);
+  border-radius: 10px;
+  box-sizing: border-box;
+  resize: vertical;
+}
+
+.tour-nav {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 10px;
+  margin-top: 16px;
+}
+
+/* モバイル・レスポンシブ対応 */
+@media (max-width: 768px) {
+  /* スマホは一覧の下にボタンを置く（横に並べる幅がないため） */
+  .tour-intro-row {
+    grid-template-columns: 1fr;
+    justify-items: center;
+  }
+
+  .tour-overview,
+  .tour-start-btn {
+    grid-column: 1;
+  }
+
+  .tour-start-btn {
+    justify-self: end;
+  }
+
+  .tour-relation-tag {
+    margin: 2px 0 0;
+  }
+
+  .wheel-asteroid-toggle {
+    top: 0;
+    right: 0;
+    padding: 3px 9px;
+    font-size: 11px;
+  }
+
+  .tour-bar-row {
+    grid-template-columns: 34px 1fr 20px;
+  }
+
+  .tour-bar-names {
+    grid-column: 1 / -1;
+    margin: -2px 0 4px;
+  }
+
+  .big-three-grid {
+    gap: 8px;
+  }
+
+  .big-three-tile {
+    padding: 12px 4px;
+  }
+
+  .learn-overlay {
+    align-items: flex-end;
+    padding: 0;
+  }
+
+  .learn-panel {
+    max-width: none;
+    max-height: 85vh;
+    border-radius: 18px 18px 0 0;
+  }
+
+  .learn-panel-body {
+    padding: 14px 16px 28px;
+  }
+
+  .app-container {
+    padding: 16px 12px 48px 12px;
+  }
+
+  /* スマホ時は天体詳細カード・案内ボックスを非表示（円盤左上の天体名バッジのみ表示） */
+  .desktop-only-planet-card {
+    display: none !important;
+  }
+
+  /* スマホ時は円盤左上の天体名バッジをコンパクトにし、長い名称でも円盤に被らないように調整 */
+  .wheel-planet-badge {
+    top: 0px !important;
+    left: 0px !important;
+    padding: 3px 9px !important;
+    gap: 3px !important;
+  }
+
+  .wheel-planet-badge-symbol {
+    font-size: 12px !important;
+  }
+
+  .wheel-planet-badge-name {
+    font-size: 11px !important;
+    letter-spacing: 0 !important;
+  }
+
+  /* スマホ時はPoFの「パートオブ」の後ろや長尺タイトルで改行 */
+  .mobile-only-br {
+    display: inline;
+  }
+
+  .desktop-only-inline {
+    display: none;
+  }
+
+  .astro-table-container {
+    border-radius: 12px;
+    overflow-x: auto;
+    -webkit-overflow-scrolling: touch;
+  }
+
+  .astro-table {
+    min-width: 520px;
+    font-size: 12.5px;
+  }
+
+  .astro-table th, .astro-table td {
+    padding: 8px 10px;
+  }
+
+  /* 天体・感受点一覧テーブルをスマホ画面幅に収める */
+  .planets-table {
+    min-width: 0;
+    width: 100%;
+    font-size: 11px;
+  }
+
+  .planets-table th, .planets-table td {
+    padding: 7px 4px;
+  }
+
+  .planets-table .planets-col-name {
+    width: auto !important;
+    line-height: 1.3;
+  }
+
+  .planets-table .planet-symbol-cell,
+  .planets-table .sign-symbol-cell {
+    margin-right: 3px !important;
+    font-size: 12.5px !important;
+  }
+
+  .combo-box {
+    height: 34px;
+  }
+
+  .combo-input {
+    font-size: 13px;
+    padding: 2px 3px;
+  }
+
+  .combo-select {
+    font-size: 11px;
+    padding: 0 3px;
+  }
+
+  /* スマホ時のアスペクト詳細リスト（二重円でパートオブフォーチュンを含む行）の幅調整 */
+  .aspect-list-body {
+    padding: 10px 12px !important;
+  }
+
+  .aspect-item-row {
+    gap: 6px !important;
+  }
+
+  .aspect-item-has-pof {
+    gap: 4px !important;
+  }
+
+  .aspect-item-has-pof .aspect-transit-pair {
+    gap: 3px !important;
+  }
+
+  .aspect-pof-text {
+    font-size: 10px !important;
+    letter-spacing: -0.05em !important;
+  }
+}

@@ -1,0 +1,46 @@
+﻿NOTICE
+======
+
+星よみホロスコープ ― 使うほど詳しくなる
+Copyright (C) 2026 treegreen1310
+
+このプログラムはフリーソフトウェアです。GNU Affero General Public License
+（AGPL）バージョン3、またはそれ以降のバージョンの条件で、再配布・改変できます。
+このプログラムは無保証です。詳しくは LICENSE をご覧ください。
+
+This program is free software: you can redistribute it and/or modify it
+under the terms of the GNU Affero General Public License as published by
+the Free Software Foundation, either version 3 of the License, or (at your
+option) any later version. This program is distributed WITHOUT ANY
+WARRANTY. See LICENSE for details.
+
+Source code: https://github.com/treegreen1310/seiyo_astro
+
+
+天体計算：Swiss Ephemeris
+------------------------
+このアプリの天体計算には Swiss Ephemeris を使用しています。
+
+Swiss Ephemeris
+Copyright (C) 1997 - 2021 Astrodienst AG, Switzerland. All rights reserved.
+Authors: Dieter Koch and Alois Treindl.
+https://www.astro.com/swisseph
+
+Swiss Ephemeris はAGPLと有料のプロ用ライセンスの二本立てで提供されており、
+このアプリはAGPLを選択しています。
+
+ブラウザで動かすために、次のパッケージ（AGPL-3.0-or-later）を使用しています。
+  @kuntay/swisseph / @kuntay/swisseph-data
+  https://github.com/kuntayerkus/swisseph-wasm
+
+天体暦データ（seas_18.se1 など）は、Astrodienst AG が NASA/JPL の
+DE441 をもとに作成したものです。
+
+このアプリは Astrodienst AG とは関係がなく、同社の承認・推奨を受けたものでは
+ありません。
+
+
+その他のライブラリ
+------------------
+React / React DOM（MIT License）
+lucide-react（ISC License）

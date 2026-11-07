@@ -1,0 +1,2421 @@
+import { HoroscopeData } from '../types/horoscope';
+
+export const initialFallbackData: HoroscopeData = {
+  "success": true,
+  "chart_info": {
+    "datetime_str": "1990年1月1日 03時07分",
+    "lat": 35.6895,
+    "lon": 139.6917,
+    "timezone": 9.0
+  },
+  "houses": [
+    {
+      "house": 1,
+      "cusp_deg": 230.6058659985659,
+      "sign": "蠍座",
+      "sign_symbol": "♏",
+      "degree_str": "20.36",
+      "degree_decimal": 20.61,
+      "ruler": "冥王星",
+      "planets": [
+        "火星"
+      ]
+    },
+    {
+      "house": 2,
+      "cusp_deg": 260.52518852889307,
+      "sign": "射手座",
+      "sign_symbol": "♐",
+      "degree_str": "20.32",
+      "degree_decimal": 20.53,
+      "ruler": "木星",
+      "planets": [
+        "太陽",
+        "土星",
+        "天王星",
+        "海王星"
+      ]
+    },
+    {
+      "house": 3,
+      "cusp_deg": 294.27408564739443,
+      "sign": "山羊座",
+      "sign_symbol": "♑",
+      "degree_str": "24.16",
+      "degree_decimal": 24.27,
+      "ruler": "土星",
+      "planets": [
+        "月",
+        "水星",
+        "金星",
+        "ベスタ",
+        "ヘッド"
+      ]
+    },
+    {
+      "house": 4,
+      "cusp_deg": 329.4734987925036,
+      "sign": "水瓶座",
+      "sign_symbol": "♒",
+      "degree_str": "29.28",
+      "degree_decimal": 29.47,
+      "ruler": "天王星",
+      "planets": [
+        "パラス"
+      ]
+    },
+    {
+      "house": 5,
+      "cusp_deg": 1.566758279205601,
+      "sign": "牡羊座",
+      "sign_symbol": "♈",
+      "degree_str": "1.34",
+      "degree_decimal": 1.57,
+      "ruler": "火星",
+      "planets": []
+    },
+    {
+      "house": 6,
+      "cusp_deg": 28.309847486371496,
+      "sign": "牡羊座",
+      "sign_symbol": "♈",
+      "degree_str": "28.19",
+      "degree_decimal": 28.31,
+      "ruler": "火星",
+      "planets": []
+    },
+    {
+      "house": 7,
+      "cusp_deg": 50.60586599856589,
+      "sign": "牡牛座",
+      "sign_symbol": "♉",
+      "degree_str": "20.36",
+      "degree_decimal": 20.61,
+      "ruler": "金星",
+      "planets": []
+    },
+    {
+      "house": 8,
+      "cusp_deg": 80.52518852889307,
+      "sign": "双子座",
+      "sign_symbol": "♊",
+      "degree_str": "20.32",
+      "degree_decimal": 20.53,
+      "ruler": "水星",
+      "planets": [
+        "木星",
+        "キロン",
+        "セレス"
+      ]
+    },
+    {
+      "house": 9,
+      "cusp_deg": 114.27408564739443,
+      "sign": "蟹座",
+      "sign_symbol": "♋",
+      "degree_str": "24.16",
+      "degree_decimal": 24.27,
+      "ruler": "月",
+      "planets": [
+        "テイル"
+      ]
+    },
+    {
+      "house": 10,
+      "cusp_deg": 149.4734987925036,
+      "sign": "獅子座",
+      "sign_symbol": "♌",
+      "degree_str": "29.28",
+      "degree_decimal": 29.47,
+      "ruler": "太陽",
+      "planets": []
+    },
+    {
+      "house": 11,
+      "cusp_deg": 181.56675827920563,
+      "sign": "天秤座",
+      "sign_symbol": "♎",
+      "degree_str": "1.34",
+      "degree_decimal": 1.57,
+      "ruler": "金星",
+      "planets": [
+        "PoF パートオブフォーチュン"
+      ]
+    },
+    {
+      "house": 12,
+      "cusp_deg": 208.3098474863715,
+      "sign": "天秤座",
+      "sign_symbol": "♎",
+      "degree_str": "28.19",
+      "degree_decimal": 28.31,
+      "ruler": "金星",
+      "planets": [
+        "冥王星",
+        "ジュノー",
+        "リリス"
+      ]
+    }
+  ],
+  "planets": [
+    {
+      "key": "sun",
+      "name": "太陽",
+      "symbol": "☉",
+      "category": "planet",
+      "abs_deg": 280.05458960963756,
+      "sign": "山羊座",
+      "sign_symbol": "♑",
+      "deg_in_sign": "10.3",
+      "deg_decimal": 10.05,
+      "house": 2,
+      "ruled_houses": "10ハウス",
+      "is_retrograde": false
+    },
+    {
+      "key": "moon",
+      "name": "月",
+      "symbol": "☽",
+      "category": "planet",
+      "abs_deg": 323.2854030952915,
+      "sign": "水瓶座",
+      "sign_symbol": "♒",
+      "deg_in_sign": "23.17",
+      "deg_decimal": 23.29,
+      "house": 3,
+      "ruled_houses": "9ハウス",
+      "is_retrograde": false
+    },
+    {
+      "key": "mercury",
+      "name": "水星",
+      "symbol": "☿",
+      "category": "planet",
+      "abs_deg": 295.83763960662907,
+      "sign": "山羊座",
+      "sign_symbol": "♑",
+      "deg_in_sign": "25.50",
+      "deg_decimal": 25.84,
+      "house": 3,
+      "ruled_houses": "8ハウス",
+      "is_retrograde": true
+    },
+    {
+      "key": "venus",
+      "name": "金星",
+      "symbol": "♀",
+      "category": "planet",
+      "abs_deg": 306.3072475819831,
+      "sign": "水瓶座",
+      "sign_symbol": "♒",
+      "deg_in_sign": "6.18",
+      "deg_decimal": 6.31,
+      "house": 3,
+      "ruled_houses": "7ハウス, 11ハウス, 12ハウス",
+      "is_retrograde": true
+    },
+    {
+      "key": "mars",
+      "name": "火星",
+      "symbol": "♂",
+      "category": "planet",
+      "abs_deg": 249.4758408370659,
+      "sign": "射手座",
+      "sign_symbol": "♐",
+      "deg_in_sign": "9.29",
+      "deg_decimal": 9.48,
+      "house": 1,
+      "ruled_houses": "5ハウス, 6ハウス",
+      "is_retrograde": false
+    },
+    {
+      "key": "jupiter",
+      "name": "木星",
+      "symbol": "♃",
+      "category": "planet",
+      "abs_deg": 95.24907623691351,
+      "sign": "蟹座",
+      "sign_symbol": "♋",
+      "deg_in_sign": "5.15",
+      "deg_decimal": 5.25,
+      "house": 8,
+      "ruled_houses": "2ハウス",
+      "is_retrograde": true
+    },
+    {
+      "key": "saturn",
+      "name": "土星",
+      "symbol": "♄",
+      "category": "planet",
+      "abs_deg": 285.5694194211887,
+      "sign": "山羊座",
+      "sign_symbol": "♑",
+      "deg_in_sign": "15.34",
+      "deg_decimal": 15.57,
+      "house": 2,
+      "ruled_houses": "3ハウス",
+      "is_retrograde": false
+    },
+    {
+      "key": "uranus",
+      "name": "天王星",
+      "symbol": "♅",
+      "category": "planet",
+      "abs_deg": 275.7407379829747,
+      "sign": "山羊座",
+      "sign_symbol": "♑",
+      "deg_in_sign": "5.44",
+      "deg_decimal": 5.74,
+      "house": 2,
+      "ruled_houses": "4ハウス",
+      "is_retrograde": false
+    },
+    {
+      "key": "neptune",
+      "name": "海王星",
+      "symbol": "♆",
+      "category": "planet",
+      "abs_deg": 282.0098696735508,
+      "sign": "山羊座",
+      "sign_symbol": "♑",
+      "deg_in_sign": "12.1",
+      "deg_decimal": 12.01,
+      "house": 2,
+      "ruled_houses": "-",
+      "is_retrograde": false
+    },
+    {
+      "key": "pluto",
+      "name": "冥王星",
+      "symbol": "♇",
+      "category": "planet",
+      "abs_deg": 227.0726770475949,
+      "sign": "蠍座",
+      "sign_symbol": "♏",
+      "deg_in_sign": "17.4",
+      "deg_decimal": 17.07,
+      "house": 12,
+      "ruled_houses": "1ハウス",
+      "is_retrograde": false
+    },
+    {
+      "key": "chiron",
+      "name": "キロン",
+      "symbol": "⚷",
+      "category": "asteroid",
+      "abs_deg": 103.86423883300233,
+      "sign": "蟹座",
+      "sign_symbol": "♋",
+      "deg_in_sign": "13.52",
+      "deg_decimal": 13.86,
+      "house": 8,
+      "ruled_houses": "-",
+      "is_retrograde": true
+    },
+    {
+      "key": "ceres",
+      "name": "セレス",
+      "symbol": "⚳",
+      "category": "asteroid",
+      "abs_deg": 85.71677856314541,
+      "sign": "双子座",
+      "sign_symbol": "♊",
+      "deg_in_sign": "25.43",
+      "deg_decimal": 25.72,
+      "house": 8,
+      "ruled_houses": "-",
+      "is_retrograde": true
+    },
+    {
+      "key": "pallas",
+      "name": "パラス",
+      "symbol": "⚴",
+      "category": "asteroid",
+      "abs_deg": 1.3929330103032476,
+      "sign": "牡羊座",
+      "sign_symbol": "♈",
+      "deg_in_sign": "1.24",
+      "deg_decimal": 1.39,
+      "house": 4,
+      "ruled_houses": "-",
+      "is_retrograde": false
+    },
+    {
+      "key": "juno",
+      "name": "ジュノー",
+      "symbol": "⚵",
+      "category": "asteroid",
+      "abs_deg": 223.78772341893588,
+      "sign": "蠍座",
+      "sign_symbol": "♏",
+      "deg_in_sign": "13.47",
+      "deg_decimal": 13.79,
+      "house": 12,
+      "ruled_houses": "-",
+      "is_retrograde": false
+    },
+    {
+      "key": "vesta",
+      "name": "ベスタ",
+      "symbol": "⚶",
+      "category": "asteroid",
+      "abs_deg": 317.08307995926026,
+      "sign": "水瓶座",
+      "sign_symbol": "♒",
+      "deg_in_sign": "17.5",
+      "deg_decimal": 17.08,
+      "house": 3,
+      "ruled_houses": "-",
+      "is_retrograde": false
+    },
+    {
+      "key": "mean_node",
+      "name": "ヘッド",
+      "symbol": "☊",
+      "category": "node",
+      "abs_deg": 318.4744421977664,
+      "sign": "水瓶座",
+      "sign_symbol": "♒",
+      "deg_in_sign": "18.28",
+      "deg_decimal": 18.47,
+      "house": 3,
+      "ruled_houses": "-",
+      "is_retrograde": true
+    },
+    {
+      "key": "mean_apog",
+      "name": "リリス",
+      "symbol": "⚸",
+      "category": "virtual",
+      "abs_deg": 216.38052634377283,
+      "sign": "蠍座",
+      "sign_symbol": "♏",
+      "deg_in_sign": "6.23",
+      "deg_decimal": 6.38,
+      "house": 12,
+      "ruled_houses": "-",
+      "is_retrograde": false
+    },
+    {
+      "key": "tail",
+      "name": "テイル",
+      "symbol": "☋",
+      "category": "node",
+      "abs_deg": 138.4744421977664,
+      "sign": "獅子座",
+      "sign_symbol": "♌",
+      "deg_in_sign": "18.28",
+      "deg_decimal": 18.47,
+      "house": 9,
+      "ruled_houses": "-",
+      "is_retrograde": true
+    },
+    {
+      "key": "asc",
+      "name": "ASC",
+      "symbol": "ASC",
+      "category": "angle",
+      "abs_deg": 230.6058659985659,
+      "sign": "蠍座",
+      "sign_symbol": "♏",
+      "deg_in_sign": "20.36",
+      "deg_decimal": 20.61,
+      "house": 1,
+      "ruled_houses": "-",
+      "is_retrograde": false
+    },
+    {
+      "key": "mc",
+      "name": "MC",
+      "symbol": "MC",
+      "category": "angle",
+      "abs_deg": 149.4734987925036,
+      "sign": "獅子座",
+      "sign_symbol": "♌",
+      "deg_in_sign": "29.28",
+      "deg_decimal": 29.47,
+      "house": 10,
+      "ruled_houses": "-",
+      "is_retrograde": false
+    },
+    {
+      "key": "vertex",
+      "name": "バーテクス",
+      "symbol": "Vt",
+      "category": "angle",
+      "abs_deg": 97.59609282155623,
+      "sign": "蟹座",
+      "sign_symbol": "♋",
+      "deg_in_sign": "7.36",
+      "deg_decimal": 7.6,
+      "house": 8,
+      "ruled_houses": "-",
+      "is_retrograde": false
+    },
+    {
+      "key": "pof",
+      "name": "パートオブフォーチュン",
+      "symbol": "PoF",
+      "category": "lot",
+      "abs_deg": 187.37505251291196,
+      "sign": "天秤座",
+      "sign_symbol": "♎",
+      "deg_in_sign": "7.23",
+      "deg_decimal": 7.38,
+      "house": 11,
+      "ruled_houses": "-",
+      "is_retrograde": false
+    }
+  ],
+  "aspects": [
+    {
+      "p1_key": "sun",
+      "p1_name": "太陽",
+      "p2_key": "jupiter",
+      "p2_name": "木星",
+      "aspect_name": "オポジション",
+      "aspect_symbol": "☍",
+      "target_angle": 180,
+      "orb": 4.81,
+      "orb_str": "4.81°"
+    },
+    {
+      "p1_key": "sun",
+      "p1_name": "太陽",
+      "p2_key": "saturn",
+      "p2_name": "土星",
+      "aspect_name": "コンジャンクション",
+      "aspect_symbol": "☌",
+      "target_angle": 0,
+      "orb": 5.51,
+      "orb_str": "5.51°"
+    },
+    {
+      "p1_key": "sun",
+      "p1_name": "太陽",
+      "p2_key": "uranus",
+      "p2_name": "天王星",
+      "aspect_name": "コンジャンクション",
+      "aspect_symbol": "☌",
+      "target_angle": 0,
+      "orb": 4.31,
+      "orb_str": "4.31°"
+    },
+    {
+      "p1_key": "sun",
+      "p1_name": "太陽",
+      "p2_key": "neptune",
+      "p2_name": "海王星",
+      "aspect_name": "コンジャンクション",
+      "aspect_symbol": "☌",
+      "target_angle": 0,
+      "orb": 1.96,
+      "orb_str": "1.96°"
+    },
+    {
+      "p1_key": "sun",
+      "p1_name": "太陽",
+      "p2_key": "chiron",
+      "p2_name": "キロン",
+      "aspect_name": "オポジション",
+      "aspect_symbol": "☍",
+      "target_angle": 180,
+      "orb": 3.81,
+      "orb_str": "3.81°"
+    },
+    {
+      "p1_key": "sun",
+      "p1_name": "太陽",
+      "p2_key": "juno",
+      "p2_name": "ジュノー",
+      "aspect_name": "セクスタイル",
+      "aspect_symbol": "⚹",
+      "target_angle": 60,
+      "orb": 3.73,
+      "orb_str": "3.73°"
+    },
+    {
+      "p1_key": "sun",
+      "p1_name": "太陽",
+      "p2_key": "mean_apog",
+      "p2_name": "リリス",
+      "aspect_name": "セクスタイル",
+      "aspect_symbol": "⚹",
+      "target_angle": 60,
+      "orb": 3.67,
+      "orb_str": "3.67°"
+    },
+    {
+      "p1_key": "sun",
+      "p1_name": "太陽",
+      "p2_key": "vertex",
+      "p2_name": "バーテクス",
+      "aspect_name": "オポジション",
+      "aspect_symbol": "☍",
+      "target_angle": 180,
+      "orb": 2.46,
+      "orb_str": "2.46°"
+    },
+    {
+      "p1_key": "sun",
+      "p1_name": "太陽",
+      "p2_key": "pof",
+      "p2_name": "パートオブフォーチュン",
+      "aspect_name": "スクエア",
+      "aspect_symbol": "□",
+      "target_angle": 90,
+      "orb": 2.68,
+      "orb_str": "2.68°"
+    },
+    {
+      "p1_key": "moon",
+      "p1_name": "月",
+      "p2_key": "pluto",
+      "p2_name": "冥王星",
+      "aspect_name": "スクエア",
+      "aspect_symbol": "□",
+      "target_angle": 90,
+      "orb": 6.21,
+      "orb_str": "6.21°"
+    },
+    {
+      "p1_key": "moon",
+      "p1_name": "月",
+      "p2_key": "ceres",
+      "p2_name": "セレス",
+      "aspect_name": "トライン",
+      "aspect_symbol": "△",
+      "target_angle": 120,
+      "orb": 2.43,
+      "orb_str": "2.43°"
+    },
+    {
+      "p1_key": "moon",
+      "p1_name": "月",
+      "p2_key": "vesta",
+      "p2_name": "ベスタ",
+      "aspect_name": "コンジャンクション",
+      "aspect_symbol": "☌",
+      "target_angle": 0,
+      "orb": 6.2,
+      "orb_str": "6.20°"
+    },
+    {
+      "p1_key": "moon",
+      "p1_name": "月",
+      "p2_key": "mean_node",
+      "p2_name": "ヘッド",
+      "aspect_name": "コンジャンクション",
+      "aspect_symbol": "☌",
+      "target_angle": 0,
+      "orb": 4.81,
+      "orb_str": "4.81°"
+    },
+    {
+      "p1_key": "moon",
+      "p1_name": "月",
+      "p2_key": "tail",
+      "p2_name": "テイル",
+      "aspect_name": "オポジション",
+      "aspect_symbol": "☍",
+      "target_angle": 180,
+      "orb": 4.81,
+      "orb_str": "4.81°"
+    },
+    {
+      "p1_key": "moon",
+      "p1_name": "月",
+      "p2_key": "asc",
+      "p2_name": "ASC",
+      "aspect_name": "スクエア",
+      "aspect_symbol": "□",
+      "target_angle": 90,
+      "orb": 2.68,
+      "orb_str": "2.68°"
+    },
+    {
+      "p1_key": "moon",
+      "p1_name": "月",
+      "p2_key": "mc",
+      "p2_name": "MC",
+      "aspect_name": "オポジション",
+      "aspect_symbol": "☍",
+      "target_angle": 180,
+      "orb": 6.19,
+      "orb_str": "6.19°"
+    },
+    {
+      "p1_key": "mercury",
+      "p1_name": "水星",
+      "p2_key": "ceres",
+      "p2_name": "セレス",
+      "aspect_name": "インコンジャンクト",
+      "aspect_symbol": "⚻",
+      "target_angle": 150,
+      "orb": 0.12,
+      "orb_str": "0.12°"
+    },
+    {
+      "p1_key": "mercury",
+      "p1_name": "水星",
+      "p2_key": "pallas",
+      "p2_name": "パラス",
+      "aspect_name": "セクスタイル",
+      "aspect_symbol": "⚹",
+      "target_angle": 60,
+      "orb": 5.56,
+      "orb_str": "5.56°"
+    },
+    {
+      "p1_key": "mercury",
+      "p1_name": "水星",
+      "p2_key": "asc",
+      "p2_name": "ASC",
+      "aspect_name": "セクスタイル",
+      "aspect_symbol": "⚹",
+      "target_angle": 60,
+      "orb": 5.23,
+      "orb_str": "5.23°"
+    },
+    {
+      "p1_key": "mercury",
+      "p1_name": "水星",
+      "p2_key": "mc",
+      "p2_name": "MC",
+      "aspect_name": "インコンジャンクト",
+      "aspect_symbol": "⚻",
+      "target_angle": 150,
+      "orb": 3.64,
+      "orb_str": "3.64°"
+    },
+    {
+      "p1_key": "venus",
+      "p1_name": "金星",
+      "p2_key": "mars",
+      "p2_name": "火星",
+      "aspect_name": "セクスタイル",
+      "aspect_symbol": "⚹",
+      "target_angle": 60,
+      "orb": 3.17,
+      "orb_str": "3.17°"
+    },
+    {
+      "p1_key": "venus",
+      "p1_name": "金星",
+      "p2_key": "jupiter",
+      "p2_name": "木星",
+      "aspect_name": "インコンジャンクト",
+      "aspect_symbol": "⚻",
+      "target_angle": 150,
+      "orb": 1.06,
+      "orb_str": "1.06°"
+    },
+    {
+      "p1_key": "venus",
+      "p1_name": "金星",
+      "p2_key": "pallas",
+      "p2_name": "パラス",
+      "aspect_name": "セクスタイル",
+      "aspect_symbol": "⚹",
+      "target_angle": 60,
+      "orb": 4.91,
+      "orb_str": "4.91°"
+    },
+    {
+      "p1_key": "venus",
+      "p1_name": "金星",
+      "p2_key": "mean_apog",
+      "p2_name": "リリス",
+      "aspect_name": "スクエア",
+      "aspect_symbol": "□",
+      "target_angle": 90,
+      "orb": 0.07,
+      "orb_str": "0.07°"
+    },
+    {
+      "p1_key": "venus",
+      "p1_name": "金星",
+      "p2_key": "vertex",
+      "p2_name": "バーテクス",
+      "aspect_name": "インコンジャンクト",
+      "aspect_symbol": "⚻",
+      "target_angle": 150,
+      "orb": 1.29,
+      "orb_str": "1.29°"
+    },
+    {
+      "p1_key": "venus",
+      "p1_name": "金星",
+      "p2_key": "pof",
+      "p2_name": "パートオブフォーチュン",
+      "aspect_name": "トライン",
+      "aspect_symbol": "△",
+      "target_angle": 120,
+      "orb": 1.07,
+      "orb_str": "1.07°"
+    },
+    {
+      "p1_key": "mars",
+      "p1_name": "火星",
+      "p2_key": "vertex",
+      "p2_name": "バーテクス",
+      "aspect_name": "インコンジャンクト",
+      "aspect_symbol": "⚻",
+      "target_angle": 150,
+      "orb": 1.88,
+      "orb_str": "1.88°"
+    },
+    {
+      "p1_key": "mars",
+      "p1_name": "火星",
+      "p2_key": "pof",
+      "p2_name": "パートオブフォーチュン",
+      "aspect_name": "セクスタイル",
+      "aspect_symbol": "⚹",
+      "target_angle": 60,
+      "orb": 2.1,
+      "orb_str": "2.10°"
+    },
+    {
+      "p1_key": "jupiter",
+      "p1_name": "木星",
+      "p2_key": "uranus",
+      "p2_name": "天王星",
+      "aspect_name": "オポジション",
+      "aspect_symbol": "☍",
+      "target_angle": 180,
+      "orb": 0.49,
+      "orb_str": "0.49°"
+    },
+    {
+      "p1_key": "jupiter",
+      "p1_name": "木星",
+      "p2_key": "neptune",
+      "p2_name": "海王星",
+      "aspect_name": "オポジション",
+      "aspect_symbol": "☍",
+      "target_angle": 180,
+      "orb": 6.76,
+      "orb_str": "6.76°"
+    },
+    {
+      "p1_key": "jupiter",
+      "p1_name": "木星",
+      "p2_key": "pallas",
+      "p2_name": "パラス",
+      "aspect_name": "スクエア",
+      "aspect_symbol": "□",
+      "target_angle": 90,
+      "orb": 3.86,
+      "orb_str": "3.86°"
+    },
+    {
+      "p1_key": "jupiter",
+      "p1_name": "木星",
+      "p2_key": "mean_apog",
+      "p2_name": "リリス",
+      "aspect_name": "トライン",
+      "aspect_symbol": "△",
+      "target_angle": 120,
+      "orb": 1.13,
+      "orb_str": "1.13°"
+    },
+    {
+      "p1_key": "jupiter",
+      "p1_name": "木星",
+      "p2_key": "mc",
+      "p2_name": "MC",
+      "aspect_name": "セクスタイル",
+      "aspect_symbol": "⚹",
+      "target_angle": 60,
+      "orb": 5.78,
+      "orb_str": "5.78°"
+    },
+    {
+      "p1_key": "jupiter",
+      "p1_name": "木星",
+      "p2_key": "vertex",
+      "p2_name": "バーテクス",
+      "aspect_name": "コンジャンクション",
+      "aspect_symbol": "☌",
+      "target_angle": 0,
+      "orb": 2.35,
+      "orb_str": "2.35°"
+    },
+    {
+      "p1_key": "jupiter",
+      "p1_name": "木星",
+      "p2_key": "pof",
+      "p2_name": "パートオブフォーチュン",
+      "aspect_name": "スクエア",
+      "aspect_symbol": "□",
+      "target_angle": 90,
+      "orb": 2.13,
+      "orb_str": "2.13°"
+    },
+    {
+      "p1_key": "saturn",
+      "p1_name": "土星",
+      "p2_key": "neptune",
+      "p2_name": "海王星",
+      "aspect_name": "コンジャンクション",
+      "aspect_symbol": "☌",
+      "target_angle": 0,
+      "orb": 3.56,
+      "orb_str": "3.56°"
+    },
+    {
+      "p1_key": "saturn",
+      "p1_name": "土星",
+      "p2_key": "pluto",
+      "p2_name": "冥王星",
+      "aspect_name": "セクスタイル",
+      "aspect_symbol": "⚹",
+      "target_angle": 60,
+      "orb": 1.5,
+      "orb_str": "1.50°"
+    },
+    {
+      "p1_key": "saturn",
+      "p1_name": "土星",
+      "p2_key": "chiron",
+      "p2_name": "キロン",
+      "aspect_name": "オポジション",
+      "aspect_symbol": "☍",
+      "target_angle": 180,
+      "orb": 1.71,
+      "orb_str": "1.71°"
+    },
+    {
+      "p1_key": "saturn",
+      "p1_name": "土星",
+      "p2_key": "juno",
+      "p2_name": "ジュノー",
+      "aspect_name": "セクスタイル",
+      "aspect_symbol": "⚹",
+      "target_angle": 60,
+      "orb": 1.78,
+      "orb_str": "1.78°"
+    },
+    {
+      "p1_key": "saturn",
+      "p1_name": "土星",
+      "p2_key": "tail",
+      "p2_name": "テイル",
+      "aspect_name": "インコンジャンクト",
+      "aspect_symbol": "⚻",
+      "target_angle": 150,
+      "orb": 2.91,
+      "orb_str": "2.91°"
+    },
+    {
+      "p1_key": "saturn",
+      "p1_name": "土星",
+      "p2_key": "asc",
+      "p2_name": "ASC",
+      "aspect_name": "セクスタイル",
+      "aspect_symbol": "⚹",
+      "target_angle": 60,
+      "orb": 5.04,
+      "orb_str": "5.04°"
+    },
+    {
+      "p1_key": "saturn",
+      "p1_name": "土星",
+      "p2_key": "vertex",
+      "p2_name": "バーテクス",
+      "aspect_name": "オポジション",
+      "aspect_symbol": "☍",
+      "target_angle": 180,
+      "orb": 7.97,
+      "orb_str": "7.97°"
+    },
+    {
+      "p1_key": "uranus",
+      "p1_name": "天王星",
+      "p2_key": "neptune",
+      "p2_name": "海王星",
+      "aspect_name": "コンジャンクション",
+      "aspect_symbol": "☌",
+      "target_angle": 0,
+      "orb": 6.27,
+      "orb_str": "6.27°"
+    },
+    {
+      "p1_key": "uranus",
+      "p1_name": "天王星",
+      "p2_key": "pallas",
+      "p2_name": "パラス",
+      "aspect_name": "スクエア",
+      "aspect_symbol": "□",
+      "target_angle": 90,
+      "orb": 4.35,
+      "orb_str": "4.35°"
+    },
+    {
+      "p1_key": "uranus",
+      "p1_name": "天王星",
+      "p2_key": "mean_apog",
+      "p2_name": "リリス",
+      "aspect_name": "セクスタイル",
+      "aspect_symbol": "⚹",
+      "target_angle": 60,
+      "orb": 0.64,
+      "orb_str": "0.64°"
+    },
+    {
+      "p1_key": "uranus",
+      "p1_name": "天王星",
+      "p2_key": "mc",
+      "p2_name": "MC",
+      "aspect_name": "トライン",
+      "aspect_symbol": "△",
+      "target_angle": 120,
+      "orb": 6.27,
+      "orb_str": "6.27°"
+    },
+    {
+      "p1_key": "uranus",
+      "p1_name": "天王星",
+      "p2_key": "vertex",
+      "p2_name": "バーテクス",
+      "aspect_name": "オポジション",
+      "aspect_symbol": "☍",
+      "target_angle": 180,
+      "orb": 1.86,
+      "orb_str": "1.86°"
+    },
+    {
+      "p1_key": "uranus",
+      "p1_name": "天王星",
+      "p2_key": "pof",
+      "p2_name": "パートオブフォーチュン",
+      "aspect_name": "スクエア",
+      "aspect_symbol": "□",
+      "target_angle": 90,
+      "orb": 1.63,
+      "orb_str": "1.63°"
+    },
+    {
+      "p1_key": "neptune",
+      "p1_name": "海王星",
+      "p2_key": "pluto",
+      "p2_name": "冥王星",
+      "aspect_name": "セクスタイル",
+      "aspect_symbol": "⚹",
+      "target_angle": 60,
+      "orb": 5.06,
+      "orb_str": "5.06°"
+    },
+    {
+      "p1_key": "neptune",
+      "p1_name": "海王星",
+      "p2_key": "chiron",
+      "p2_name": "キロン",
+      "aspect_name": "オポジション",
+      "aspect_symbol": "☍",
+      "target_angle": 180,
+      "orb": 1.85,
+      "orb_str": "1.85°"
+    },
+    {
+      "p1_key": "neptune",
+      "p1_name": "海王星",
+      "p2_key": "juno",
+      "p2_name": "ジュノー",
+      "aspect_name": "セクスタイル",
+      "aspect_symbol": "⚹",
+      "target_angle": 60,
+      "orb": 1.78,
+      "orb_str": "1.78°"
+    },
+    {
+      "p1_key": "neptune",
+      "p1_name": "海王星",
+      "p2_key": "mean_apog",
+      "p2_name": "リリス",
+      "aspect_name": "セクスタイル",
+      "aspect_symbol": "⚹",
+      "target_angle": 60,
+      "orb": 5.63,
+      "orb_str": "5.63°"
+    },
+    {
+      "p1_key": "neptune",
+      "p1_name": "海王星",
+      "p2_key": "vertex",
+      "p2_name": "バーテクス",
+      "aspect_name": "オポジション",
+      "aspect_symbol": "☍",
+      "target_angle": 180,
+      "orb": 4.41,
+      "orb_str": "4.41°"
+    },
+    {
+      "p1_key": "neptune",
+      "p1_name": "海王星",
+      "p2_key": "pof",
+      "p2_name": "パートオブフォーチュン",
+      "aspect_name": "スクエア",
+      "aspect_symbol": "□",
+      "target_angle": 90,
+      "orb": 4.63,
+      "orb_str": "4.63°"
+    },
+    {
+      "p1_key": "pluto",
+      "p1_name": "冥王星",
+      "p2_key": "chiron",
+      "p2_name": "キロン",
+      "aspect_name": "トライン",
+      "aspect_symbol": "△",
+      "target_angle": 120,
+      "orb": 3.21,
+      "orb_str": "3.21°"
+    },
+    {
+      "p1_key": "pluto",
+      "p1_name": "冥王星",
+      "p2_key": "juno",
+      "p2_name": "ジュノー",
+      "aspect_name": "コンジャンクション",
+      "aspect_symbol": "☌",
+      "target_angle": 0,
+      "orb": 3.28,
+      "orb_str": "3.28°"
+    },
+    {
+      "p1_key": "pluto",
+      "p1_name": "冥王星",
+      "p2_key": "vesta",
+      "p2_name": "ベスタ",
+      "aspect_name": "スクエア",
+      "aspect_symbol": "□",
+      "target_angle": 90,
+      "orb": 0.01,
+      "orb_str": "0.01°"
+    },
+    {
+      "p1_key": "pluto",
+      "p1_name": "冥王星",
+      "p2_key": "mean_node",
+      "p2_name": "ヘッド",
+      "aspect_name": "スクエア",
+      "aspect_symbol": "□",
+      "target_angle": 90,
+      "orb": 1.4,
+      "orb_str": "1.40°"
+    },
+    {
+      "p1_key": "pluto",
+      "p1_name": "冥王星",
+      "p2_key": "tail",
+      "p2_name": "テイル",
+      "aspect_name": "スクエア",
+      "aspect_symbol": "□",
+      "target_angle": 90,
+      "orb": 1.4,
+      "orb_str": "1.40°"
+    },
+    {
+      "p1_key": "pluto",
+      "p1_name": "冥王星",
+      "p2_key": "asc",
+      "p2_name": "ASC",
+      "aspect_name": "コンジャンクション",
+      "aspect_symbol": "☌",
+      "target_angle": 0,
+      "orb": 3.53,
+      "orb_str": "3.53°"
+    },
+    {
+      "p1_key": "chiron",
+      "p1_name": "キロン",
+      "p2_key": "juno",
+      "p2_name": "ジュノー",
+      "aspect_name": "トライン",
+      "aspect_symbol": "△",
+      "target_angle": 120,
+      "orb": 0.08,
+      "orb_str": "0.08°"
+    },
+    {
+      "p1_key": "chiron",
+      "p1_name": "キロン",
+      "p2_key": "vesta",
+      "p2_name": "ベスタ",
+      "aspect_name": "インコンジャンクト",
+      "aspect_symbol": "⚻",
+      "target_angle": 150,
+      "orb": 3.22,
+      "orb_str": "3.22°"
+    },
+    {
+      "p1_key": "chiron",
+      "p1_name": "キロン",
+      "p2_key": "mean_apog",
+      "p2_name": "リリス",
+      "aspect_name": "トライン",
+      "aspect_symbol": "△",
+      "target_angle": 120,
+      "orb": 7.48,
+      "orb_str": "7.48°"
+    },
+    {
+      "p1_key": "chiron",
+      "p1_name": "キロン",
+      "p2_key": "asc",
+      "p2_name": "ASC",
+      "aspect_name": "トライン",
+      "aspect_symbol": "△",
+      "target_angle": 120,
+      "orb": 6.74,
+      "orb_str": "6.74°"
+    },
+    {
+      "p1_key": "chiron",
+      "p1_name": "キロン",
+      "p2_key": "vertex",
+      "p2_name": "バーテクス",
+      "aspect_name": "コンジャンクション",
+      "aspect_symbol": "☌",
+      "target_angle": 0,
+      "orb": 6.27,
+      "orb_str": "6.27°"
+    },
+    {
+      "p1_key": "chiron",
+      "p1_name": "キロン",
+      "p2_key": "pof",
+      "p2_name": "パートオブフォーチュン",
+      "aspect_name": "スクエア",
+      "aspect_symbol": "□",
+      "target_angle": 90,
+      "orb": 6.49,
+      "orb_str": "6.49°"
+    },
+    {
+      "p1_key": "ceres",
+      "p1_name": "セレス",
+      "p2_key": "pallas",
+      "p2_name": "パラス",
+      "aspect_name": "スクエア",
+      "aspect_symbol": "□",
+      "target_angle": 90,
+      "orb": 5.68,
+      "orb_str": "5.68°"
+    },
+    {
+      "p1_key": "ceres",
+      "p1_name": "セレス",
+      "p2_key": "mean_node",
+      "p2_name": "ヘッド",
+      "aspect_name": "トライン",
+      "aspect_symbol": "△",
+      "target_angle": 120,
+      "orb": 7.24,
+      "orb_str": "7.24°"
+    },
+    {
+      "p1_key": "ceres",
+      "p1_name": "セレス",
+      "p2_key": "mc",
+      "p2_name": "MC",
+      "aspect_name": "セクスタイル",
+      "aspect_symbol": "⚹",
+      "target_angle": 60,
+      "orb": 3.76,
+      "orb_str": "3.76°"
+    },
+    {
+      "p1_key": "pallas",
+      "p1_name": "パラス",
+      "p2_key": "mc",
+      "p2_name": "MC",
+      "aspect_name": "インコンジャンクト",
+      "aspect_symbol": "⚻",
+      "target_angle": 150,
+      "orb": 1.92,
+      "orb_str": "1.92°"
+    },
+    {
+      "p1_key": "pallas",
+      "p1_name": "パラス",
+      "p2_key": "vertex",
+      "p2_name": "バーテクス",
+      "aspect_name": "スクエア",
+      "aspect_symbol": "□",
+      "target_angle": 90,
+      "orb": 6.2,
+      "orb_str": "6.20°"
+    },
+    {
+      "p1_key": "pallas",
+      "p1_name": "パラス",
+      "p2_key": "pof",
+      "p2_name": "パートオブフォーチュン",
+      "aspect_name": "オポジション",
+      "aspect_symbol": "☍",
+      "target_angle": 180,
+      "orb": 5.98,
+      "orb_str": "5.98°"
+    },
+    {
+      "p1_key": "juno",
+      "p1_name": "ジュノー",
+      "p2_key": "vesta",
+      "p2_name": "ベスタ",
+      "aspect_name": "スクエア",
+      "aspect_symbol": "□",
+      "target_angle": 90,
+      "orb": 3.3,
+      "orb_str": "3.30°"
+    },
+    {
+      "p1_key": "juno",
+      "p1_name": "ジュノー",
+      "p2_key": "mean_node",
+      "p2_name": "ヘッド",
+      "aspect_name": "スクエア",
+      "aspect_symbol": "□",
+      "target_angle": 90,
+      "orb": 4.69,
+      "orb_str": "4.69°"
+    },
+    {
+      "p1_key": "juno",
+      "p1_name": "ジュノー",
+      "p2_key": "mean_apog",
+      "p2_name": "リリス",
+      "aspect_name": "コンジャンクション",
+      "aspect_symbol": "☌",
+      "target_angle": 0,
+      "orb": 7.41,
+      "orb_str": "7.41°"
+    },
+    {
+      "p1_key": "juno",
+      "p1_name": "ジュノー",
+      "p2_key": "tail",
+      "p2_name": "テイル",
+      "aspect_name": "スクエア",
+      "aspect_symbol": "□",
+      "target_angle": 90,
+      "orb": 4.69,
+      "orb_str": "4.69°"
+    },
+    {
+      "p1_key": "juno",
+      "p1_name": "ジュノー",
+      "p2_key": "asc",
+      "p2_name": "ASC",
+      "aspect_name": "コンジャンクション",
+      "aspect_symbol": "☌",
+      "target_angle": 0,
+      "orb": 6.82,
+      "orb_str": "6.82°"
+    },
+    {
+      "p1_key": "juno",
+      "p1_name": "ジュノー",
+      "p2_key": "vertex",
+      "p2_name": "バーテクス",
+      "aspect_name": "トライン",
+      "aspect_symbol": "△",
+      "target_angle": 120,
+      "orb": 6.19,
+      "orb_str": "6.19°"
+    },
+    {
+      "p1_key": "vesta",
+      "p1_name": "ベスタ",
+      "p2_key": "mean_node",
+      "p2_name": "ヘッド",
+      "aspect_name": "コンジャンクション",
+      "aspect_symbol": "☌",
+      "target_angle": 0,
+      "orb": 1.39,
+      "orb_str": "1.39°"
+    },
+    {
+      "p1_key": "vesta",
+      "p1_name": "ベスタ",
+      "p2_key": "tail",
+      "p2_name": "テイル",
+      "aspect_name": "オポジション",
+      "aspect_symbol": "☍",
+      "target_angle": 180,
+      "orb": 1.39,
+      "orb_str": "1.39°"
+    },
+    {
+      "p1_key": "vesta",
+      "p1_name": "ベスタ",
+      "p2_key": "asc",
+      "p2_name": "ASC",
+      "aspect_name": "スクエア",
+      "aspect_symbol": "□",
+      "target_angle": 90,
+      "orb": 3.52,
+      "orb_str": "3.52°"
+    },
+    {
+      "p1_key": "mean_node",
+      "p1_name": "ヘッド",
+      "p2_key": "tail",
+      "p2_name": "テイル",
+      "aspect_name": "オポジション",
+      "aspect_symbol": "☍",
+      "target_angle": 180,
+      "orb": 0.0,
+      "orb_str": "0.00°"
+    },
+    {
+      "p1_key": "mean_node",
+      "p1_name": "ヘッド",
+      "p2_key": "asc",
+      "p2_name": "ASC",
+      "aspect_name": "スクエア",
+      "aspect_symbol": "□",
+      "target_angle": 90,
+      "orb": 2.13,
+      "orb_str": "2.13°"
+    },
+    {
+      "p1_key": "mean_apog",
+      "p1_name": "リリス",
+      "p2_key": "vertex",
+      "p2_name": "バーテクス",
+      "aspect_name": "トライン",
+      "aspect_symbol": "△",
+      "target_angle": 120,
+      "orb": 1.22,
+      "orb_str": "1.22°"
+    },
+    {
+      "p1_key": "tail",
+      "p1_name": "テイル",
+      "p2_key": "asc",
+      "p2_name": "ASC",
+      "aspect_name": "スクエア",
+      "aspect_symbol": "□",
+      "target_angle": 90,
+      "orb": 2.13,
+      "orb_str": "2.13°"
+    },
+    {
+      "p1_key": "vertex",
+      "p1_name": "バーテクス",
+      "p2_key": "pof",
+      "p2_name": "パートオブフォーチュン",
+      "aspect_name": "スクエア",
+      "aspect_symbol": "□",
+      "target_angle": 90,
+      "orb": 0.22,
+      "orb_str": "0.22°"
+    }
+  ],
+  "aspect_matrix": {
+    "sun": {
+      "jupiter": {
+        "p1_key": "sun",
+        "p1_name": "太陽",
+        "p2_key": "jupiter",
+        "p2_name": "木星",
+        "aspect_name": "オポジション",
+        "aspect_symbol": "☍",
+        "target_angle": 180,
+        "orb": 4.81,
+        "orb_str": "4.81°"
+      },
+      "saturn": {
+        "p1_key": "sun",
+        "p1_name": "太陽",
+        "p2_key": "saturn",
+        "p2_name": "土星",
+        "aspect_name": "コンジャンクション",
+        "aspect_symbol": "☌",
+        "target_angle": 0,
+        "orb": 5.51,
+        "orb_str": "5.51°"
+      },
+      "uranus": {
+        "p1_key": "sun",
+        "p1_name": "太陽",
+        "p2_key": "uranus",
+        "p2_name": "天王星",
+        "aspect_name": "コンジャンクション",
+        "aspect_symbol": "☌",
+        "target_angle": 0,
+        "orb": 4.31,
+        "orb_str": "4.31°"
+      },
+      "neptune": {
+        "p1_key": "sun",
+        "p1_name": "太陽",
+        "p2_key": "neptune",
+        "p2_name": "海王星",
+        "aspect_name": "コンジャンクション",
+        "aspect_symbol": "☌",
+        "target_angle": 0,
+        "orb": 1.96,
+        "orb_str": "1.96°"
+      },
+      "chiron": {
+        "p1_key": "sun",
+        "p1_name": "太陽",
+        "p2_key": "chiron",
+        "p2_name": "キロン",
+        "aspect_name": "オポジション",
+        "aspect_symbol": "☍",
+        "target_angle": 180,
+        "orb": 3.81,
+        "orb_str": "3.81°"
+      },
+      "juno": {
+        "p1_key": "sun",
+        "p1_name": "太陽",
+        "p2_key": "juno",
+        "p2_name": "ジュノー",
+        "aspect_name": "セクスタイル",
+        "aspect_symbol": "⚹",
+        "target_angle": 60,
+        "orb": 3.73,
+        "orb_str": "3.73°"
+      },
+      "mean_apog": {
+        "p1_key": "sun",
+        "p1_name": "太陽",
+        "p2_key": "mean_apog",
+        "p2_name": "リリス",
+        "aspect_name": "セクスタイル",
+        "aspect_symbol": "⚹",
+        "target_angle": 60,
+        "orb": 3.67,
+        "orb_str": "3.67°"
+      },
+      "vertex": {
+        "p1_key": "sun",
+        "p1_name": "太陽",
+        "p2_key": "vertex",
+        "p2_name": "バーテクス",
+        "aspect_name": "オポジション",
+        "aspect_symbol": "☍",
+        "target_angle": 180,
+        "orb": 2.46,
+        "orb_str": "2.46°"
+      },
+      "pof": {
+        "p1_key": "sun",
+        "p1_name": "太陽",
+        "p2_key": "pof",
+        "p2_name": "パートオブフォーチュン",
+        "aspect_name": "スクエア",
+        "aspect_symbol": "□",
+        "target_angle": 90,
+        "orb": 2.68,
+        "orb_str": "2.68°"
+      }
+    },
+    "moon": {
+      "pluto": {
+        "p1_key": "moon",
+        "p1_name": "月",
+        "p2_key": "pluto",
+        "p2_name": "冥王星",
+        "aspect_name": "スクエア",
+        "aspect_symbol": "□",
+        "target_angle": 90,
+        "orb": 6.21,
+        "orb_str": "6.21°"
+      },
+      "ceres": {
+        "p1_key": "moon",
+        "p1_name": "月",
+        "p2_key": "ceres",
+        "p2_name": "セレス",
+        "aspect_name": "トライン",
+        "aspect_symbol": "△",
+        "target_angle": 120,
+        "orb": 2.43,
+        "orb_str": "2.43°"
+      },
+      "vesta": {
+        "p1_key": "moon",
+        "p1_name": "月",
+        "p2_key": "vesta",
+        "p2_name": "ベスタ",
+        "aspect_name": "コンジャンクション",
+        "aspect_symbol": "☌",
+        "target_angle": 0,
+        "orb": 6.2,
+        "orb_str": "6.20°"
+      },
+      "mean_node": {
+        "p1_key": "moon",
+        "p1_name": "月",
+        "p2_key": "mean_node",
+        "p2_name": "ヘッド",
+        "aspect_name": "コンジャンクション",
+        "aspect_symbol": "☌",
+        "target_angle": 0,
+        "orb": 4.81,
+        "orb_str": "4.81°"
+      },
+      "tail": {
+        "p1_key": "moon",
+        "p1_name": "月",
+        "p2_key": "tail",
+        "p2_name": "テイル",
+        "aspect_name": "オポジション",
+        "aspect_symbol": "☍",
+        "target_angle": 180,
+        "orb": 4.81,
+        "orb_str": "4.81°"
+      },
+      "asc": {
+        "p1_key": "moon",
+        "p1_name": "月",
+        "p2_key": "asc",
+        "p2_name": "ASC",
+        "aspect_name": "スクエア",
+        "aspect_symbol": "□",
+        "target_angle": 90,
+        "orb": 2.68,
+        "orb_str": "2.68°"
+      },
+      "mc": {
+        "p1_key": "moon",
+        "p1_name": "月",
+        "p2_key": "mc",
+        "p2_name": "MC",
+        "aspect_name": "オポジション",
+        "aspect_symbol": "☍",
+        "target_angle": 180,
+        "orb": 6.19,
+        "orb_str": "6.19°"
+      }
+    },
+    "mercury": {
+      "ceres": {
+        "p1_key": "mercury",
+        "p1_name": "水星",
+        "p2_key": "ceres",
+        "p2_name": "セレス",
+        "aspect_name": "インコンジャンクト",
+        "aspect_symbol": "⚻",
+        "target_angle": 150,
+        "orb": 0.12,
+        "orb_str": "0.12°"
+      },
+      "pallas": {
+        "p1_key": "mercury",
+        "p1_name": "水星",
+        "p2_key": "pallas",
+        "p2_name": "パラス",
+        "aspect_name": "セクスタイル",
+        "aspect_symbol": "⚹",
+        "target_angle": 60,
+        "orb": 5.56,
+        "orb_str": "5.56°"
+      },
+      "asc": {
+        "p1_key": "mercury",
+        "p1_name": "水星",
+        "p2_key": "asc",
+        "p2_name": "ASC",
+        "aspect_name": "セクスタイル",
+        "aspect_symbol": "⚹",
+        "target_angle": 60,
+        "orb": 5.23,
+        "orb_str": "5.23°"
+      },
+      "mc": {
+        "p1_key": "mercury",
+        "p1_name": "水星",
+        "p2_key": "mc",
+        "p2_name": "MC",
+        "aspect_name": "インコンジャンクト",
+        "aspect_symbol": "⚻",
+        "target_angle": 150,
+        "orb": 3.64,
+        "orb_str": "3.64°"
+      }
+    },
+    "venus": {
+      "mars": {
+        "p1_key": "venus",
+        "p1_name": "金星",
+        "p2_key": "mars",
+        "p2_name": "火星",
+        "aspect_name": "セクスタイル",
+        "aspect_symbol": "⚹",
+        "target_angle": 60,
+        "orb": 3.17,
+        "orb_str": "3.17°"
+      },
+      "jupiter": {
+        "p1_key": "venus",
+        "p1_name": "金星",
+        "p2_key": "jupiter",
+        "p2_name": "木星",
+        "aspect_name": "インコンジャンクト",
+        "aspect_symbol": "⚻",
+        "target_angle": 150,
+        "orb": 1.06,
+        "orb_str": "1.06°"
+      },
+      "pallas": {
+        "p1_key": "venus",
+        "p1_name": "金星",
+        "p2_key": "pallas",
+        "p2_name": "パラス",
+        "aspect_name": "セクスタイル",
+        "aspect_symbol": "⚹",
+        "target_angle": 60,
+        "orb": 4.91,
+        "orb_str": "4.91°"
+      },
+      "mean_apog": {
+        "p1_key": "venus",
+        "p1_name": "金星",
+        "p2_key": "mean_apog",
+        "p2_name": "リリス",
+        "aspect_name": "スクエア",
+        "aspect_symbol": "□",
+        "target_angle": 90,
+        "orb": 0.07,
+        "orb_str": "0.07°"
+      },
+      "vertex": {
+        "p1_key": "venus",
+        "p1_name": "金星",
+        "p2_key": "vertex",
+        "p2_name": "バーテクス",
+        "aspect_name": "インコンジャンクト",
+        "aspect_symbol": "⚻",
+        "target_angle": 150,
+        "orb": 1.29,
+        "orb_str": "1.29°"
+      },
+      "pof": {
+        "p1_key": "venus",
+        "p1_name": "金星",
+        "p2_key": "pof",
+        "p2_name": "パートオブフォーチュン",
+        "aspect_name": "トライン",
+        "aspect_symbol": "△",
+        "target_angle": 120,
+        "orb": 1.07,
+        "orb_str": "1.07°"
+      }
+    },
+    "mars": {
+      "vertex": {
+        "p1_key": "mars",
+        "p1_name": "火星",
+        "p2_key": "vertex",
+        "p2_name": "バーテクス",
+        "aspect_name": "インコンジャンクト",
+        "aspect_symbol": "⚻",
+        "target_angle": 150,
+        "orb": 1.88,
+        "orb_str": "1.88°"
+      },
+      "pof": {
+        "p1_key": "mars",
+        "p1_name": "火星",
+        "p2_key": "pof",
+        "p2_name": "パートオブフォーチュン",
+        "aspect_name": "セクスタイル",
+        "aspect_symbol": "⚹",
+        "target_angle": 60,
+        "orb": 2.1,
+        "orb_str": "2.10°"
+      }
+    },
+    "jupiter": {
+      "uranus": {
+        "p1_key": "jupiter",
+        "p1_name": "木星",
+        "p2_key": "uranus",
+        "p2_name": "天王星",
+        "aspect_name": "オポジション",
+        "aspect_symbol": "☍",
+        "target_angle": 180,
+        "orb": 0.49,
+        "orb_str": "0.49°"
+      },
+      "neptune": {
+        "p1_key": "jupiter",
+        "p1_name": "木星",
+        "p2_key": "neptune",
+        "p2_name": "海王星",
+        "aspect_name": "オポジション",
+        "aspect_symbol": "☍",
+        "target_angle": 180,
+        "orb": 6.76,
+        "orb_str": "6.76°"
+      },
+      "pallas": {
+        "p1_key": "jupiter",
+        "p1_name": "木星",
+        "p2_key": "pallas",
+        "p2_name": "パラス",
+        "aspect_name": "スクエア",
+        "aspect_symbol": "□",
+        "target_angle": 90,
+        "orb": 3.86,
+        "orb_str": "3.86°"
+      },
+      "mean_apog": {
+        "p1_key": "jupiter",
+        "p1_name": "木星",
+        "p2_key": "mean_apog",
+        "p2_name": "リリス",
+        "aspect_name": "トライン",
+        "aspect_symbol": "△",
+        "target_angle": 120,
+        "orb": 1.13,
+        "orb_str": "1.13°"
+      },
+      "mc": {
+        "p1_key": "jupiter",
+        "p1_name": "木星",
+        "p2_key": "mc",
+        "p2_name": "MC",
+        "aspect_name": "セクスタイル",
+        "aspect_symbol": "⚹",
+        "target_angle": 60,
+        "orb": 5.78,
+        "orb_str": "5.78°"
+      },
+      "vertex": {
+        "p1_key": "jupiter",
+        "p1_name": "木星",
+        "p2_key": "vertex",
+        "p2_name": "バーテクス",
+        "aspect_name": "コンジャンクション",
+        "aspect_symbol": "☌",
+        "target_angle": 0,
+        "orb": 2.35,
+        "orb_str": "2.35°"
+      },
+      "pof": {
+        "p1_key": "jupiter",
+        "p1_name": "木星",
+        "p2_key": "pof",
+        "p2_name": "パートオブフォーチュン",
+        "aspect_name": "スクエア",
+        "aspect_symbol": "□",
+        "target_angle": 90,
+        "orb": 2.13,
+        "orb_str": "2.13°"
+      }
+    },
+    "saturn": {
+      "neptune": {
+        "p1_key": "saturn",
+        "p1_name": "土星",
+        "p2_key": "neptune",
+        "p2_name": "海王星",
+        "aspect_name": "コンジャンクション",
+        "aspect_symbol": "☌",
+        "target_angle": 0,
+        "orb": 3.56,
+        "orb_str": "3.56°"
+      },
+      "pluto": {
+        "p1_key": "saturn",
+        "p1_name": "土星",
+        "p2_key": "pluto",
+        "p2_name": "冥王星",
+        "aspect_name": "セクスタイル",
+        "aspect_symbol": "⚹",
+        "target_angle": 60,
+        "orb": 1.5,
+        "orb_str": "1.50°"
+      },
+      "chiron": {
+        "p1_key": "saturn",
+        "p1_name": "土星",
+        "p2_key": "chiron",
+        "p2_name": "キロン",
+        "aspect_name": "オポジション",
+        "aspect_symbol": "☍",
+        "target_angle": 180,
+        "orb": 1.71,
+        "orb_str": "1.71°"
+      },
+      "juno": {
+        "p1_key": "saturn",
+        "p1_name": "土星",
+        "p2_key": "juno",
+        "p2_name": "ジュノー",
+        "aspect_name": "セクスタイル",
+        "aspect_symbol": "⚹",
+        "target_angle": 60,
+        "orb": 1.78,
+        "orb_str": "1.78°"
+      },
+      "tail": {
+        "p1_key": "saturn",
+        "p1_name": "土星",
+        "p2_key": "tail",
+        "p2_name": "テイル",
+        "aspect_name": "インコンジャンクト",
+        "aspect_symbol": "⚻",
+        "target_angle": 150,
+        "orb": 2.91,
+        "orb_str": "2.91°"
+      },
+      "asc": {
+        "p1_key": "saturn",
+        "p1_name": "土星",
+        "p2_key": "asc",
+        "p2_name": "ASC",
+        "aspect_name": "セクスタイル",
+        "aspect_symbol": "⚹",
+        "target_angle": 60,
+        "orb": 5.04,
+        "orb_str": "5.04°"
+      },
+      "vertex": {
+        "p1_key": "saturn",
+        "p1_name": "土星",
+        "p2_key": "vertex",
+        "p2_name": "バーテクス",
+        "aspect_name": "オポジション",
+        "aspect_symbol": "☍",
+        "target_angle": 180,
+        "orb": 7.97,
+        "orb_str": "7.97°"
+      }
+    },
+    "uranus": {
+      "neptune": {
+        "p1_key": "uranus",
+        "p1_name": "天王星",
+        "p2_key": "neptune",
+        "p2_name": "海王星",
+        "aspect_name": "コンジャンクション",
+        "aspect_symbol": "☌",
+        "target_angle": 0,
+        "orb": 6.27,
+        "orb_str": "6.27°"
+      },
+      "pallas": {
+        "p1_key": "uranus",
+        "p1_name": "天王星",
+        "p2_key": "pallas",
+        "p2_name": "パラス",
+        "aspect_name": "スクエア",
+        "aspect_symbol": "□",
+        "target_angle": 90,
+        "orb": 4.35,
+        "orb_str": "4.35°"
+      },
+      "mean_apog": {
+        "p1_key": "uranus",
+        "p1_name": "天王星",
+        "p2_key": "mean_apog",
+        "p2_name": "リリス",
+        "aspect_name": "セクスタイル",
+        "aspect_symbol": "⚹",
+        "target_angle": 60,
+        "orb": 0.64,
+        "orb_str": "0.64°"
+      },
+      "mc": {
+        "p1_key": "uranus",
+        "p1_name": "天王星",
+        "p2_key": "mc",
+        "p2_name": "MC",
+        "aspect_name": "トライン",
+        "aspect_symbol": "△",
+        "target_angle": 120,
+        "orb": 6.27,
+        "orb_str": "6.27°"
+      },
+      "vertex": {
+        "p1_key": "uranus",
+        "p1_name": "天王星",
+        "p2_key": "vertex",
+        "p2_name": "バーテクス",
+        "aspect_name": "オポジション",
+        "aspect_symbol": "☍",
+        "target_angle": 180,
+        "orb": 1.86,
+        "orb_str": "1.86°"
+      },
+      "pof": {
+        "p1_key": "uranus",
+        "p1_name": "天王星",
+        "p2_key": "pof",
+        "p2_name": "パートオブフォーチュン",
+        "aspect_name": "スクエア",
+        "aspect_symbol": "□",
+        "target_angle": 90,
+        "orb": 1.63,
+        "orb_str": "1.63°"
+      }
+    },
+    "neptune": {
+      "pluto": {
+        "p1_key": "neptune",
+        "p1_name": "海王星",
+        "p2_key": "pluto",
+        "p2_name": "冥王星",
+        "aspect_name": "セクスタイル",
+        "aspect_symbol": "⚹",
+        "target_angle": 60,
+        "orb": 5.06,
+        "orb_str": "5.06°"
+      },
+      "chiron": {
+        "p1_key": "neptune",
+        "p1_name": "海王星",
+        "p2_key": "chiron",
+        "p2_name": "キロン",
+        "aspect_name": "オポジション",
+        "aspect_symbol": "☍",
+        "target_angle": 180,
+        "orb": 1.85,
+        "orb_str": "1.85°"
+      },
+      "juno": {
+        "p1_key": "neptune",
+        "p1_name": "海王星",
+        "p2_key": "juno",
+        "p2_name": "ジュノー",
+        "aspect_name": "セクスタイル",
+        "aspect_symbol": "⚹",
+        "target_angle": 60,
+        "orb": 1.78,
+        "orb_str": "1.78°"
+      },
+      "mean_apog": {
+        "p1_key": "neptune",
+        "p1_name": "海王星",
+        "p2_key": "mean_apog",
+        "p2_name": "リリス",
+        "aspect_name": "セクスタイル",
+        "aspect_symbol": "⚹",
+        "target_angle": 60,
+        "orb": 5.63,
+        "orb_str": "5.63°"
+      },
+      "vertex": {
+        "p1_key": "neptune",
+        "p1_name": "海王星",
+        "p2_key": "vertex",
+        "p2_name": "バーテクス",
+        "aspect_name": "オポジション",
+        "aspect_symbol": "☍",
+        "target_angle": 180,
+        "orb": 4.41,
+        "orb_str": "4.41°"
+      },
+      "pof": {
+        "p1_key": "neptune",
+        "p1_name": "海王星",
+        "p2_key": "pof",
+        "p2_name": "パートオブフォーチュン",
+        "aspect_name": "スクエア",
+        "aspect_symbol": "□",
+        "target_angle": 90,
+        "orb": 4.63,
+        "orb_str": "4.63°"
+      }
+    },
+    "pluto": {
+      "chiron": {
+        "p1_key": "pluto",
+        "p1_name": "冥王星",
+        "p2_key": "chiron",
+        "p2_name": "キロン",
+        "aspect_name": "トライン",
+        "aspect_symbol": "△",
+        "target_angle": 120,
+        "orb": 3.21,
+        "orb_str": "3.21°"
+      },
+      "juno": {
+        "p1_key": "pluto",
+        "p1_name": "冥王星",
+        "p2_key": "juno",
+        "p2_name": "ジュノー",
+        "aspect_name": "コンジャンクション",
+        "aspect_symbol": "☌",
+        "target_angle": 0,
+        "orb": 3.28,
+        "orb_str": "3.28°"
+      },
+      "vesta": {
+        "p1_key": "pluto",
+        "p1_name": "冥王星",
+        "p2_key": "vesta",
+        "p2_name": "ベスタ",
+        "aspect_name": "スクエア",
+        "aspect_symbol": "□",
+        "target_angle": 90,
+        "orb": 0.01,
+        "orb_str": "0.01°"
+      },
+      "mean_node": {
+        "p1_key": "pluto",
+        "p1_name": "冥王星",
+        "p2_key": "mean_node",
+        "p2_name": "ヘッド",
+        "aspect_name": "スクエア",
+        "aspect_symbol": "□",
+        "target_angle": 90,
+        "orb": 1.4,
+        "orb_str": "1.40°"
+      },
+      "tail": {
+        "p1_key": "pluto",
+        "p1_name": "冥王星",
+        "p2_key": "tail",
+        "p2_name": "テイル",
+        "aspect_name": "スクエア",
+        "aspect_symbol": "□",
+        "target_angle": 90,
+        "orb": 1.4,
+        "orb_str": "1.40°"
+      },
+      "asc": {
+        "p1_key": "pluto",
+        "p1_name": "冥王星",
+        "p2_key": "asc",
+        "p2_name": "ASC",
+        "aspect_name": "コンジャンクション",
+        "aspect_symbol": "☌",
+        "target_angle": 0,
+        "orb": 3.53,
+        "orb_str": "3.53°"
+      }
+    },
+    "chiron": {
+      "juno": {
+        "p1_key": "chiron",
+        "p1_name": "キロン",
+        "p2_key": "juno",
+        "p2_name": "ジュノー",
+        "aspect_name": "トライン",
+        "aspect_symbol": "△",
+        "target_angle": 120,
+        "orb": 0.08,
+        "orb_str": "0.08°"
+      },
+      "vesta": {
+        "p1_key": "chiron",
+        "p1_name": "キロン",
+        "p2_key": "vesta",
+        "p2_name": "ベスタ",
+        "aspect_name": "インコンジャンクト",
+        "aspect_symbol": "⚻",
+        "target_angle": 150,
+        "orb": 3.22,
+        "orb_str": "3.22°"
+      },
+      "mean_apog": {
+        "p1_key": "chiron",
+        "p1_name": "キロン",
+        "p2_key": "mean_apog",
+        "p2_name": "リリス",
+        "aspect_name": "トライン",
+        "aspect_symbol": "△",
+        "target_angle": 120,
+        "orb": 7.48,
+        "orb_str": "7.48°"
+      },
+      "asc": {
+        "p1_key": "chiron",
+        "p1_name": "キロン",
+        "p2_key": "asc",
+        "p2_name": "ASC",
+        "aspect_name": "トライン",
+        "aspect_symbol": "△",
+        "target_angle": 120,
+        "orb": 6.74,
+        "orb_str": "6.74°"
+      },
+      "vertex": {
+        "p1_key": "chiron",
+        "p1_name": "キロン",
+        "p2_key": "vertex",
+        "p2_name": "バーテクス",
+        "aspect_name": "コンジャンクション",
+        "aspect_symbol": "☌",
+        "target_angle": 0,
+        "orb": 6.27,
+        "orb_str": "6.27°"
+      },
+      "pof": {
+        "p1_key": "chiron",
+        "p1_name": "キロン",
+        "p2_key": "pof",
+        "p2_name": "パートオブフォーチュン",
+        "aspect_name": "スクエア",
+        "aspect_symbol": "□",
+        "target_angle": 90,
+        "orb": 6.49,
+        "orb_str": "6.49°"
+      }
+    },
+    "ceres": {
+      "pallas": {
+        "p1_key": "ceres",
+        "p1_name": "セレス",
+        "p2_key": "pallas",
+        "p2_name": "パラス",
+        "aspect_name": "スクエア",
+        "aspect_symbol": "□",
+        "target_angle": 90,
+        "orb": 5.68,
+        "orb_str": "5.68°"
+      },
+      "mean_node": {
+        "p1_key": "ceres",
+        "p1_name": "セレス",
+        "p2_key": "mean_node",
+        "p2_name": "ヘッド",
+        "aspect_name": "トライン",
+        "aspect_symbol": "△",
+        "target_angle": 120,
+        "orb": 7.24,
+        "orb_str": "7.24°"
+      },
+      "mc": {
+        "p1_key": "ceres",
+        "p1_name": "セレス",
+        "p2_key": "mc",
+        "p2_name": "MC",
+        "aspect_name": "セクスタイル",
+        "aspect_symbol": "⚹",
+        "target_angle": 60,
+        "orb": 3.76,
+        "orb_str": "3.76°"
+      }
+    },
+    "pallas": {
+      "mc": {
+        "p1_key": "pallas",
+        "p1_name": "パラス",
+        "p2_key": "mc",
+        "p2_name": "MC",
+        "aspect_name": "インコンジャンクト",
+        "aspect_symbol": "⚻",
+        "target_angle": 150,
+        "orb": 1.92,
+        "orb_str": "1.92°"
+      },
+      "vertex": {
+        "p1_key": "pallas",
+        "p1_name": "パラス",
+        "p2_key": "vertex",
+        "p2_name": "バーテクス",
+        "aspect_name": "スクエア",
+        "aspect_symbol": "□",
+        "target_angle": 90,
+        "orb": 6.2,
+        "orb_str": "6.20°"
+      },
+      "pof": {
+        "p1_key": "pallas",
+        "p1_name": "パラス",
+        "p2_key": "pof",
+        "p2_name": "パートオブフォーチュン",
+        "aspect_name": "オポジション",
+        "aspect_symbol": "☍",
+        "target_angle": 180,
+        "orb": 5.98,
+        "orb_str": "5.98°"
+      }
+    },
+    "juno": {
+      "vesta": {
+        "p1_key": "juno",
+        "p1_name": "ジュノー",
+        "p2_key": "vesta",
+        "p2_name": "ベスタ",
+        "aspect_name": "スクエア",
+        "aspect_symbol": "□",
+        "target_angle": 90,
+        "orb": 3.3,
+        "orb_str": "3.30°"
+      },
+      "mean_node": {
+        "p1_key": "juno",
+        "p1_name": "ジュノー",
+        "p2_key": "mean_node",
+        "p2_name": "ヘッド",
+        "aspect_name": "スクエア",
+        "aspect_symbol": "□",
+        "target_angle": 90,
+        "orb": 4.69,
+        "orb_str": "4.69°"
+      },
+      "mean_apog": {
+        "p1_key": "juno",
+        "p1_name": "ジュノー",
+        "p2_key": "mean_apog",
+        "p2_name": "リリス",
+        "aspect_name": "コンジャンクション",
+        "aspect_symbol": "☌",
+        "target_angle": 0,
+        "orb": 7.41,
+        "orb_str": "7.41°"
+      },
+      "tail": {
+        "p1_key": "juno",
+        "p1_name": "ジュノー",
+        "p2_key": "tail",
+        "p2_name": "テイル",
+        "aspect_name": "スクエア",
+        "aspect_symbol": "□",
+        "target_angle": 90,
+        "orb": 4.69,
+        "orb_str": "4.69°"
+      },
+      "asc": {
+        "p1_key": "juno",
+        "p1_name": "ジュノー",
+        "p2_key": "asc",
+        "p2_name": "ASC",
+        "aspect_name": "コンジャンクション",
+        "aspect_symbol": "☌",
+        "target_angle": 0,
+        "orb": 6.82,
+        "orb_str": "6.82°"
+      },
+      "vertex": {
+        "p1_key": "juno",
+        "p1_name": "ジュノー",
+        "p2_key": "vertex",
+        "p2_name": "バーテクス",
+        "aspect_name": "トライン",
+        "aspect_symbol": "△",
+        "target_angle": 120,
+        "orb": 6.19,
+        "orb_str": "6.19°"
+      }
+    },
+    "vesta": {
+      "mean_node": {
+        "p1_key": "vesta",
+        "p1_name": "ベスタ",
+        "p2_key": "mean_node",
+        "p2_name": "ヘッド",
+        "aspect_name": "コンジャンクション",
+        "aspect_symbol": "☌",
+        "target_angle": 0,
+        "orb": 1.39,
+        "orb_str": "1.39°"
+      },
+      "tail": {
+        "p1_key": "vesta",
+        "p1_name": "ベスタ",
+        "p2_key": "tail",
+        "p2_name": "テイル",
+        "aspect_name": "オポジション",
+        "aspect_symbol": "☍",
+        "target_angle": 180,
+        "orb": 1.39,
+        "orb_str": "1.39°"
+      },
+      "asc": {
+        "p1_key": "vesta",
+        "p1_name": "ベスタ",
+        "p2_key": "asc",
+        "p2_name": "ASC",
+        "aspect_name": "スクエア",
+        "aspect_symbol": "□",
+        "target_angle": 90,
+        "orb": 3.52,
+        "orb_str": "3.52°"
+      }
+    },
+    "mean_node": {
+      "tail": {
+        "p1_key": "mean_node",
+        "p1_name": "ヘッド",
+        "p2_key": "tail",
+        "p2_name": "テイル",
+        "aspect_name": "オポジション",
+        "aspect_symbol": "☍",
+        "target_angle": 180,
+        "orb": 0.0,
+        "orb_str": "0.00°"
+      },
+      "asc": {
+        "p1_key": "mean_node",
+        "p1_name": "ヘッド",
+        "p2_key": "asc",
+        "p2_name": "ASC",
+        "aspect_name": "スクエア",
+        "aspect_symbol": "□",
+        "target_angle": 90,
+        "orb": 2.13,
+        "orb_str": "2.13°"
+      }
+    },
+    "mean_apog": {
+      "vertex": {
+        "p1_key": "mean_apog",
+        "p1_name": "リリス",
+        "p2_key": "vertex",
+        "p2_name": "バーテクス",
+        "aspect_name": "トライン",
+        "aspect_symbol": "△",
+        "target_angle": 120,
+        "orb": 1.22,
+        "orb_str": "1.22°"
+      }
+    },
+    "tail": {
+      "asc": {
+        "p1_key": "tail",
+        "p1_name": "テイル",
+        "p2_key": "asc",
+        "p2_name": "ASC",
+        "aspect_name": "スクエア",
+        "aspect_symbol": "□",
+        "target_angle": 90,
+        "orb": 2.13,
+        "orb_str": "2.13°"
+      }
+    },
+    "asc": {},
+    "mc": {},
+    "vertex": {
+      "pof": {
+        "p1_key": "vertex",
+        "p1_name": "バーテクス",
+        "p2_key": "pof",
+        "p2_name": "パートオブフォーチュン",
+        "aspect_name": "スクエア",
+        "aspect_symbol": "□",
+        "target_angle": 90,
+        "orb": 0.22,
+        "orb_str": "0.22°"
+      }
+    },
+    "pof": {}
+  },
+  "cusps": [
+    230.6058659985659,
+    260.52518852889307,
+    294.27408564739443,
+    329.4734987925036,
+    1.566758279205601,
+    28.309847486371496,
+    50.60586599856589,
+    80.52518852889307,
+    114.27408564739443,
+    149.4734987925036,
+    181.56675827920563,
+    208.3098474863715
+  ]
+};
